@@ -53,9 +53,9 @@ const createStore = () =>
     new OpenAIEmbeddings()
   )
 
-export const search = async (query, count = 1) => {
+export const search = async (query, count = 2) => {
   const store = await createStore()
-  return await store.similaritySearch(query, count)
+  return await store.similaritySearchWithScore(query, count)
 }
 
 console.log(await search('a movie about a dog'))
