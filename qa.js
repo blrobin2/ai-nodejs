@@ -47,8 +47,6 @@ const query = async () => {
   const store = await loadStore()
   const results = await store.similaritySearch(question, 2)
 
-  console.log(results)
-
   const response = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
     temperature: 0,
